@@ -18,7 +18,7 @@ export default {
     methods: {
         handleSubmit() {
             this.error = '';
-            const url = 'processForm.php';
+            const url = 'src/processForm.php';
             const options = {
                 method: 'POST',
                 credentials: "same-origin",

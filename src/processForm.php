@@ -1,8 +1,8 @@
 <?php
 
 namespace App;
-require 'validation.php';
-require 'DistanceCalculator.php';
+
+require "../vendor/autoload.php";
 
 use App\ValidateFormData as Validator;
 use App\DistanceCalculator as DistCalc;
@@ -21,6 +21,7 @@ if ($contentType === "application/json") {
         return ;
     }
 
+    $x = [];
     $validatedContent = new Validator($decoded);
     $validationResults = $validatedContent->getResults();
 

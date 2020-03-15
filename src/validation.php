@@ -27,19 +27,25 @@ class ValidateFormData  {
     const LAT = 'latitude';
     const LON = 'longitude';
 
+    const REQUIRED_KEYS = [
+        'latitude_from',
+        'latitude_to',
+        'longitude_from',
+        'longitude_to'
+    ];
+
     private $errors = [];
     private $results = [];
 
     private $formData;
 
-    private $latValues;
-    private $lonValues;
+    private $latValues = [];
+    private $lonValues = [];
 
 
     public function __construct($formData)
     {
         $this->formData = $formData;
-        $this->sortFormData();
     }
 
     public function getFormData()
@@ -64,11 +70,26 @@ class ValidateFormData  {
 
     public function getResults(): array
     {
+       $this->checkFormData();
        return $this->results;
+    }
+
+    public function checkFormData() {
+        $missing = array_diff_key(array_flip(self::REQUIRED_KEYS), $this->getFormData() );
+
+        if (count($missing) > 0) {
+            foreach ($missing as $key => $value) {
+                $this->errors[$key] = 'Form field missing';
+
+            }
+            return;
+
+        } else { $this->sortFormData(); }
     }
 
     public function sortFormData()
     {
+
         foreach($this->getFormData() as $key => $value) {
 
             if (strpos($key, self::LAT) !== false ) {
@@ -79,7 +100,9 @@ class ValidateFormData  {
             }
         }
         return $this->validateValues();
+
     }
+
 
     public function validateValues()
     {
