@@ -10,7 +10,7 @@ namespace App;
  * @param float $latitudeTo Latitude of target point in [deg decimal]
  * @param float $longitudeTo Longitude of target point in [deg decimal]
  * @param float $earthRadius Mean earth radius in [m]
- * @return float Distance between points in [km] (same as earthRadius)
+ * @return float Distance between points in [mm] (same as earthRadius)
  */
 class DistanceCalculator
 {
