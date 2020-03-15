@@ -92,13 +92,13 @@ export default {
                             </div>
                         
                             <div class="py-2 mt-6 col-span-4 ">
-                                <input type="text" v-model="latitude_from" 
+                                <input type="text" required v-model="latitude_from" 
                                 class="border-b border-b-2 border-teal-500 w-4/5 text-gray-700 px-3 text-2xl font-bold focus:outline-none" id="latitude-field-from"
                                 aria-describedby="latitude-field-from" placeholder="input latitude">
                             </div>
                             
                             <div class="py-2 mt-6 col-span-4">
-                                <input type="text" v-model="latitude_to" 
+                                <input type="text" required v-model="latitude_to" 
                                 class="border-b border-b-2 border-teal-500 w-4/5 text-gray-700 px-3 text-2xl font-bold  focus:outline-none" id="latitude-field-to"
                                 aria-describedby="latitude-field-to" placeholder="input latitude">
                             </div>
@@ -111,7 +111,7 @@ export default {
                             </div>
                         
                             <div class="py-2 mt-6 col-span-4">
-                                <input type="text" v-model="longitude_from" 
+                                <input type="text" required v-model="longitude_from" 
                                 class="border-b border-b-2 border-teal-500 w-4/5 text-gray-700 px-3 text-2xl font-bold  focus:outline-none" id="longitude-field-from"
                                 aria-describedby="longitude-field-from" placeholder="input longitude">
                             </div>
@@ -119,7 +119,7 @@ export default {
                         
                       
                             <div class="py-2 mt-6 col-span-4">
-                                <input type="text" v-model="longitude_to" 
+                                <input type="text" required v-model="longitude_to" 
                                 class="border-b border-b-2 border-teal-500 w-4/5 text-gray-700 px-3 text-2xl font-bold focus:outline-none" id="longitude-field-to"
                                 aria-describedby="longitude-field-to" placeholder="input longitude">
                             </div>
