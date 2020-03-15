@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="UTF-8">
-        <title>Vue.js in PHP</title>
+        <title>Distance Calculator vue/php</title>
 
         <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 
