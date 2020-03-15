@@ -21,7 +21,7 @@ if ($contentType === "application/json") {
         return ;
     }
 
-    $x = [];
+
     $validatedContent = new Validator($decoded);
     $validationResults = $validatedContent->getResults();
 

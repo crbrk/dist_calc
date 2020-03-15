@@ -16,6 +16,14 @@ export default {
         ResultsDisplay
     },
     methods: {
+        resetForm() {
+            this.latitude_from = '';
+            this.longitude_from ='';
+            this.latitude_to = '';
+            this.longitude_to = '';
+            this.results = null;
+            this.error = ''
+        },
         handleSubmit() {
             this.error = '';
             const url = 'src/processForm.php';
@@ -40,8 +48,8 @@ export default {
                         return response.json();
                     }
                     else {
-                        let respo = await response.json();
-                        throw new Error(respo.message)
+                        let resp = await response.json();
+                        throw new Error(resp.message)
                     }
 
                 } )
@@ -122,6 +130,13 @@ export default {
                         <button class="bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 mt-5 w-full rounded uppercase"
                                 type="submit">
                                 calculate distance
+                        </button>
+                        
+                        <button v-on:click="resetForm" 
+                                type="button"
+                                class="hover:bg-red-500 ml-auto flex mt-2 text-red-700 font-semibold hover:text-white py-2 px-4 border border-red-500 hover:border-transparent uppercase rounded"
+                                >
+                            reset
                         </button>
                      
                 </form>
